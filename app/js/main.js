@@ -6,7 +6,7 @@ import onConfig  from './on_config';
 import onRun     from './on_run';
 import 'angular-ui-router';
 import './plugins/angular-local-storage.min';
-// import './plugins/angular-fancybox-plus';
+import './plugins/angular-fancybox-plus';
 import './templates';
 import './filters';
 import './controllers';
@@ -22,7 +22,7 @@ const requires = [
   'app.services',
   'app.directives',
   'LocalStorageModule',
-  // 'fancyboxplus'
+  'fancyboxplus'
   // 'infinite-scroll'
 ];
 

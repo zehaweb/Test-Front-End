@@ -44,9 +44,10 @@
       <br><br>
       <div >
         <div class="gif-wrap hover-details" ng-repeat="gif in $ctr.myGifList">
-          <img style="width: 270px;"  class="img-responsive" ng-src="{{gif.url}}" alt="">
+          <img id="{{gif.id}}" style="width: 270px;"  class="img-responsive" ng-src="{{gif.url}}" alt="">
           <div class="details">
-            <i class="fa fa-search-plus"></i>
+            <i fancyboxable id="{{gif.id}}" href="{{gif.url}}" class="fa fa-search-plus">
+            </i>
             <i ng-click="$ctr.removeGif($index, gif);" class="fa fa-minus-circle"></i>
           </div>
 

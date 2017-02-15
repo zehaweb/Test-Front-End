@@ -25,14 +25,16 @@
       <div class="col-lg-8 col-lg-offset-2">
         <h1><b>Giphy </b>Collection</h1>
         <div id="custom-search-input">
+          <form ng-submit="$ctr.search();">
           <div class="input-group col-md-12">
             <input type="text" class="form-control input-lg" placeholder="Search" ng-model="$ctr.searchModel.searchKey" />
             <span class="input-group-btn">
-                        <button ng-click="$ctr.search();" class="btn btn-info btn-lg" type="button">
+                        <button class="btn btn-info btn-lg" type="submit">
                            <i class="fa fa-search"></i> Search
                         </button>
            </span>
           </div>
+          </form>
         </div>
       </div>
     </div><!-- row -->
@@ -44,11 +46,11 @@
     <br><br>
     <div >
       <div class="gif-wrap hover-details" ng-repeat="gif in $ctr.gifList">
-        <img  class="img-responsive" ng-src="{{gif.images.fixed_height_small.url}}" alt="">
+        <img  id="{{gif.id}}" class="img-responsive" ng-src="{{gif.images.fixed_height_small.url}}" alt="">
 
           <div class="details">
-            <!--<a id="fbplus_01" href="{{gif.images.fixed_height_small.url}}" fancyboxable><i class="fa fa-search-plus"></i></a>-->
-            <i class="fa fa-search-plus"></i>
+            <i fancyboxable id="{{gif.id}}" href="{{gif.images.original.url}}" class="fa fa-search-plus">
+            </i>
             <i ng-click="$ctr.addGif(gif);" class="fa fa-plus-circle"></i>
           </div>
 
