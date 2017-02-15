@@ -1,0 +1,90 @@
+<!-- Fixed navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="Home">Giphy<i class="fa fa-circle"></i></a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li ui-sref-active="active"><a ui-sref="Home">HOME</a></li>
+        <li ui-sref-active="active"><a ui-sref="MyCollection">MY COLLECTION</a></li>
+
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<div id="headerwrap">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h1><b>Giphy </b>Collection</h1>
+        <div id="custom-search-input">
+          <div class="input-group col-md-12">
+            <input type="text" class="form-control input-lg" placeholder="Search" ng-model="$ctr.searchModel.searchKey" />
+            <span class="input-group-btn">
+                        <button ng-click="$ctr.search();" class="btn btn-info btn-lg" type="button">
+                           <i class="fa fa-search"></i> Search
+                        </button>
+           </span>
+          </div>
+        </div>
+      </div>
+    </div><!-- row -->
+  </div><!-- container -->
+</div><!-- headerwrap -->
+<div id="lg">
+<div class="container w">
+  <div class="row centered">
+    <br><br>
+    <div >
+      <div class="gif-wrap hover-details" ng-repeat="gif in $ctr.gifList">
+        <img  class="img-responsive" ng-src="{{gif.images.fixed_height_small.url}}" alt="">
+
+          <div class="details">
+            <!--<a id="fbplus_01" href="{{gif.images.fixed_height_small.url}}" fancyboxable><i class="fa fa-search-plus"></i></a>-->
+            <i class="fa fa-search-plus"></i>
+            <i ng-click="$ctr.addGif(gif);" class="fa fa-plus-circle"></i>
+          </div>
+
+      </div>
+    </div>
+    <h2 ng-if="!$ctr.gifList.length" class="text-center">No results!</h2>
+
+  </div><!-- row -->
+</div><!-- container -->
+</div><!-- dg -->
+
+<!-- FOOTER -->
+<div id="f">
+  <div class="container">
+    <div class="row centered">
+      <a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-dribbble"></i></a>
+
+    </div><!-- row -->
+  </div><!-- container -->
+</div><!-- Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
