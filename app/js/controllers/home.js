@@ -10,6 +10,7 @@ function HomeCtrl(ApiService, localStorageService) {
   that.gifListMy = [];
 
   that.myGifList = localStorageService.get('gifListMy') ? localStorageService.get('gifListMy').gifListMy : null;
+  that.gifList = localStorageService.get('gifList') ? localStorageService.get('gifList').gifList : null;
 
   that.searchModel = {
     searchKey: null,
@@ -27,6 +28,9 @@ function HomeCtrl(ApiService, localStorageService) {
 
     that.api.searchEndpoint(m).then(function (res) {
       that.gifList = res.data.data;
+      localStorageService.set('gifList', {
+        gifList: that.gifList
+      });
     })
 
   };
