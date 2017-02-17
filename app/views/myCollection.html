@@ -42,9 +42,9 @@
   <div class="container w">
     <div class="row centered">
       <br><br>
-      <div >
+      <div id="photos">
         <div class="gif-wrap hover-details" ng-repeat="gif in $ctr.myGifList">
-          <img id="{{gif.id}}" style="width: 270px;"  class="img-responsive" ng-src="{{gif.url}}" alt="">
+          <img id="{{gif.id}}"  class="img-responsive" ng-src="{{gif.url}}" alt="">
           <div class="details">
             <i fancyboxable id="{{gif.id}}" href="{{gif.url}}" class="fa fa-search-plus">
             </i>

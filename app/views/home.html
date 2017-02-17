@@ -44,16 +44,14 @@
 <div class="container w">
   <div class="row centered">
     <br><br>
-    <div >
+    <div id="photos">
       <div class="gif-wrap hover-details" ng-repeat="gif in $ctr.gifList">
         <img  id="{{gif.id}}" class="img-responsive" ng-src="{{gif.images.fixed_height_small.url}}" alt="">
-
           <div class="details">
             <i fancyboxable id="{{gif.id}}" href="{{gif.images.original.url}}" class="fa fa-search-plus">
             </i>
             <i ng-click="$ctr.addGif(gif);" class="fa fa-plus-circle"></i>
           </div>
-
       </div>
     </div>
     <h2 ng-if="!$ctr.gifList.length" class="text-center">No results!</h2>
